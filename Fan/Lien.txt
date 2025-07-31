@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=h8BfSWJH9l0
+
+https://uk.sauber-lab.com/2021/11/15/lets-set-our-raspberry-pis-fan-to-turn-on-automatically-when-the-temperature-rises-with-script/
