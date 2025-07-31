@@ -1,0 +1,40 @@
+sudo apt update
+sudo apt upgrade
+
+sudo apt install cups
+
+sudo usermod -a -G lpadmin sami
+
+sudo cupsctl --remote-any
+sudo /etc/init.d/cups restart
+
+sudo ufw allow 631
+
+
+
+
+sudo apt install printer-driver-all
+
+sudo apt-get install printer-driver-escpr
+
+sudo apt install cups printer-driver-gutenprint
+
+
+sudo service cups restart
+
+
+[printers]
+   comment = All Printers
+   browseable = no
+   path = /var/spool/samba
+   printable = yes
+   guest ok = yes
+   read only = no
+
+[print$]
+   comment = Printer Drivers
+   path = /etc/samba/drivers
+   browseable = yes
+   guest ok = no
+   read only = yes
+   write list = root
