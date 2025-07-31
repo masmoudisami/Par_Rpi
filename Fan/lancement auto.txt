@@ -1,0 +1,25 @@
+sudo nano /etc/systemd/system/fan.service
+
+#####################
+
+[Unit]
+Description=Fan Control Script
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/sami/fan.py
+Restart=always
+User=sami
+
+[Install]
+WantedBy=multi-user.target
+
+#####################(assurer vous du chemin et nom utilisateur)
+
+sudo chmod 644 /etc/systemd/system/fan.service
+
+sudo systemctl enable fan.service
+
+sudo systemctl start fan.service
+
+sudo systemctl status fan.service
